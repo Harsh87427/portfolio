@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: #2d2e32;
+  font-family: Poppins, sans-serif;
+  color: #555;
+}
+
+.hero-img {
+  animation: morph 8s ease-in-out infinite;
+  background-image: url(/media/pfp.jpeg);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 3px solid #2d2e32;
+  border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  position: relative;
+  transition: all 1s ease-in-out;
+  height: 21.9rem;
+  width: 29.6rem;
+}
+@keyframes morph {
+  0% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+}
+
+.emoji {
+  position: absolute;
+  left: 22.5rem;
+  top: 15rem;
+  width: 5rem;
+  z-index: 30;
+}
+
+.wheel {
+  animation: spin 8s linear infinite;
+  background-color: #fff;
+  border-radius: 100%;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.scrollingEffect {
+  transform: translateY(0%);
+  transition: transform 7s ease-in-out 0s;
+}
+
+.scrollingEffect:hover {
+  transform: translateY(-72%);
+  transition: transform 7s ease-in-out 0s;
+}
+
+.icon {
+  color: #147efb;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  align-items: center;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.footerIcon {
+  height: 2rem;
+  width: 2rem;
+}
+.footerIcon:hover {
+  transform: scale(1.2);
+  transition: all 0.2s;
+}
